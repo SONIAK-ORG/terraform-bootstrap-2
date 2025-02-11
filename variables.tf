@@ -16,28 +16,5 @@ variable "project_name" {
   type        = string
 }
 
-variable "target_repo_name" {
-  description = "The name of the target repository"
-  type        = string
-}
-
-variable "location" {
-  description = "The Azure location"
-  type        = string
-}
 
 
-variable "subscription_id" {
-  description = "The Azure subscription ID"
-  type        = string
-}
-
-variable "source_repo_url" {
-  description = "URL of the source repository to import"
-  type        = string
-}
-
-variable "prefix" {
-  description = "Prefix for naming convention"
-  type        = string
-}

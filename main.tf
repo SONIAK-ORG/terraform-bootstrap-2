@@ -32,7 +32,7 @@ resource "azuredevops_build_definition" "capacity_pipeline" {
   }
 
   ci_trigger {
-    use_yaml = true
+    use_yaml = false
   }
 }
 

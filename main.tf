@@ -7,9 +7,6 @@ provider "azuredevops" {
   personal_access_token = var.pat_token
 }
 
-
-
-
 # Reference an existing Azure DevOps project
 data "azuredevops_project" "existing_project" {
   name = var.project_name
@@ -55,13 +52,6 @@ resource "azuredevops_build_definition" "workspace_pipeline" {
   ci_trigger {
     use_yaml = true
   }
-
-  #   Build Completion Trigger - Runs ONLY After Capacity Pipeline Completes
-  triggers {
-    build_completion {
-      definition_id = azuredevops_build_definition.capacity_pipeline.id
-      branch_name   = "main"
-    }
-  }
 }
+
 

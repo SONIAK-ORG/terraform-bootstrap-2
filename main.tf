@@ -52,6 +52,13 @@ resource "azuredevops_build_definition" "workspace_pipeline" {
   ci_trigger {
     use_yaml = true
   }
-}
 
+  # Automatically triggers after Capacity Pipeline completes
+  build_completion_trigger {
+    build_definition_id = azuredevops_build_definition.capacity_pipeline.id
+    branch_filter {
+      include = ["main"]
+    }
+  }
+}
 

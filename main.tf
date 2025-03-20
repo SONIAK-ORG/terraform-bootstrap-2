@@ -21,7 +21,7 @@ data "azuredevops_git_repository" "existing_repo" {
 #   First Pipeline - Capacity Pipeline
 resource "azuredevops_build_definition" "capacity_pipeline" {
   project_id = data.azuredevops_project.existing_project.id
-  name       = "capacity-pipeline"
+  name       = "Fabric-Capacity-Pipeline"
   path       = "\\"
 
   repository {
@@ -39,7 +39,7 @@ resource "azuredevops_build_definition" "capacity_pipeline" {
 #   Second Pipeline - Workspace Pipeline (Triggered by Capacity)
 resource "azuredevops_build_definition" "workspace_pipeline" {
   project_id = data.azuredevops_project.existing_project.id
-  name       = "workspace-pipeline"
+  name       = "Fabric-Workspace-Pipeline"
   path       = "\\"
 
   repository {
